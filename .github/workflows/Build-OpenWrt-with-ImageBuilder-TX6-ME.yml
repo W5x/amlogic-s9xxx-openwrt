@@ -143,12 +143,12 @@ on:
       openwrt_kernel:
         description: "Select kernel version"
         required: false
-        default: "5.4.259"
+        default: "h6"
         type: choice
         options:
           - 5.4.1_5.10.1
           - 5.15.1_6.1.1
-          - 5.4.259
+          - h6
           - 5.10.1
           - 5.15.1
           - 6.1.1
