@@ -34,7 +34,8 @@ This project, thanks to numerous [contributors](https://github.com/ophub/amlogic
 | rk3328 | [BeikeYun](https://github.com/ophub/amlogic-s9xxx-armbian/issues/852), [Chainedbox-L1-Pro](https://github.com/ophub/amlogic-s9xxx-armbian/issues/1680), [Station-M1](https://github.com/ophub/amlogic-s9xxx-armbian/issues/1313), [Bqeel-MVR9](https://github.com/ophub/amlogic-s9xxx-armbian/issues/1313), [Renegade/Firefly](https://github.com/ophub/amlogic-s9xxx-armbian/issues/1861) | [All](https://github.com/ophub/kernel/releases/tag/kernel_stable) | rockchip_boxname.img |
 | h6 | [Vplus](https://github.com/ophub/amlogic-s9xxx-armbian/issues/1100), [Tanix-TX6](https://github.com/ophub/amlogic-s9xxx-armbian/issues/1120), [TQC-A01](https://github.com/ophub/amlogic-s9xxx-armbian/pull/1638) | [All](https://github.com/ophub/kernel/releases/tag/kernel_stable) | allwinner_boxname.img |
 
-💡 Tip: Currently, the [s905 box](https://github.com/ophub/amlogic-s9xxx-armbian/issues/1173) can only be used in `TF/SD/USB`, other models of boxes support writing to `EMMC` for use. For more information, please refer to the [Supported Device List Description](make-openwrt/openwrt-files/common-files/etc/model_database.conf). You can refer to the method in Section 12.15 of the instruction manual to [add new supported devices](https://github.com/ophub/amlogic-s9xxx-armbian/blob/main/documents/README.md#1215-how-to-add-new-supported-devices). Please read the [OpenWrt User Guide](./documents) before use. It provides solutions to common issues.
+> [!TIP]
+> At present, the [s905 box](https://github.com/ophub/amlogic-s9xxx-armbian/issues/1173) can only be used in `TF/SD/USB`, other models of boxes support writing to `EMMC` for use. For more information, please refer to the [Supported Device List Description](make-openwrt/openwrt-files/common-files/etc/model_database.conf). You can refer to the method in Section 12.15 of the instruction manual to [add new supported devices](https://github.com/ophub/amlogic-s9xxx-armbian/blob/main/documents/README.md#1215-how-to-add-new-supported-devices). Please read the [OpenWrt User Guide](./documents) before use. It provides solutions to common issues.
 
 ## Install and Update OpenWrt
 
@@ -78,7 +79,8 @@ openwrt-ddbr
 
 Follow the prompts to enter `b` to backup the system, or enter `r` to restore the system.
 
-In addition, the Android system can also be flashed into eMMC using the method of flashing via a cable. The download image of the Android system can be found in [Tools](https://github.com/ophub/kernel/releases/tag/tools).
+> [!IMPORTANT]
+> In addition, the Android system can also be flashed into eMMC using the method of flashing via a cable. The download image of the Android system can be found in [Tools](https://github.com/ophub/kernel/releases/tag/tools).
 
 - ### Control LED Display
 
@@ -165,11 +167,11 @@ These parameters correspond to the `local packaging command`, please refer to th
 
 To upload to `Releases`, you need to add `${{ secrets.GITHUB_TOKEN }}` and `${{ secrets.GH_TOKEN }}` to the repository and set `Workflow read-write permissions`. For details, see [usage instructions](./documents/README.md#2-set-the-privacy-variable-github_token).
 
-| Parameter | Default Value | Description |
-| --------- | ------------- | ----------- |
-| ${{ env.PACKAGED_OUTPUTPATH }} | out | The path of the folder where the packaged firmware is located |
-| ${{ env.PACKAGED_OUTPUTDATE }} | 04.13.1058 | Packaging date (month.day.hourminute) |
-| ${{ env.PACKAGED_STATUS }} | success / failure | Packaging status. success / failure |
+| Parameter                      | Default Value     | Description                            |
+| ------------------------------ | ----------------- | -------------------------------------- |
+| ${{ env.PACKAGED_OUTPUTPATH }} | out               | OpenWrt system files output path       |
+| ${{ env.PACKAGED_OUTPUTDATE }} | 04.13.1058        | Packaging date (month.day.hourminute)  |
+| ${{ env.PACKAGED_STATUS }}     | success / failure | Packaging status. success / failure    |
 
 ## Compilation Options of openwrt-*-rootfs.tar.gz for Packaging
 
