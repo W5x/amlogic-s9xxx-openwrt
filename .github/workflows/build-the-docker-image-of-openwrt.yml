@@ -40,7 +40,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Download OpenWrt rootfs file [ ${{ inputs.source_branch }} ]
         id: down
@@ -48,7 +48,7 @@ jobs:
         run: |
           # Get OpenWrt file
           openwrt_url="$(curl \
-                            --header "authorization: Bearer ${{ secrets.GH_TOKEN }}" \
+                            --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
                             -s "https://api.github.com/repos/${GITHUB_REPOSITORY}/releases?per_page=100" |
                             grep -o "OpenWrt_.*${{ inputs.source_branch }}.*/.*rootfs.tar.gz" |
                             head -n 1
