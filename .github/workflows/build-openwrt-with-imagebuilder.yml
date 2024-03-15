@@ -285,7 +285,7 @@ jobs:
           builder_name: ${{ inputs.builder_name }}
 
       - name: Upload the packaged OpenWrt
-        uses: ncipollo/release-action@main
+        uses: W5x/release-action@main
         if: ${{ env.PACKAGED_STATUS }} == 'success' && !cancelled()
         with:
           tag: OpenWrt_imagebuilder_${{ env.RELEASES_TAG }}_${{ env.PACKAGED_OUTPUTDATE }}
