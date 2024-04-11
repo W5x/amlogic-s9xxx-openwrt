@@ -160,7 +160,7 @@ on:
         default: "5.4.188"
         type: choice
         options:
-          - 5.4.y
+          - 5.4.188
           - 5.10.y
           - 5.15.y
           - 6.1.y
